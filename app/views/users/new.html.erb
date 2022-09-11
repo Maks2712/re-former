@@ -1,6 +1,6 @@
 NEW USER
 
-<form action="/users" method="post">
+<!-- <form action="/users" method="post">
 
   <label for="username">Username:</label>
   <input type="text" id="username_id" name="user[username]"><br><br>
@@ -14,3 +14,17 @@ NEW USER
   <input type="submit" value="Submit">
 
 </form> 
+-->
+<%= form_tag("/users", method: "post") do %>
+  <%= label_tag(:username, "Username") %>
+  <%= text_field_tag(:username) %>
+
+  <%= label_tag(:email, "Email") %>
+  <%= email_field_tag(:email) %>
+
+  <%= label_tag(:password, "Password") %>
+  <%= password_field_tag(:password) %>
+
+  <%= submit_tag("Submit") %>
+<% end %>
+
